@@ -1,0 +1,8 @@
+{
+    "imports": {
+      "std/server": "https://deno.land/std@0.177.0/http/server.ts",
+      "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@2.7.1",
+      "postgres": "https://deno.land/x/postgres@v0.17.0/mod.ts",
+      "kafkasaur": "https://deno.land/x/kafkasaur@v0.0.7"
+    }
+  }
