@@ -1,0 +1,444 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@500&family=Oswald:wght@700&family=Open+Sans+Condensed:wght@300;700&display=swap");
+
+@layer base {
+  :root {
+    --gradient: #0a173b;
+    --background: 215 100% 100%;
+    --foreground: 220 100% 15%; /* #0A173E */
+
+    --primary: 0 0% 87%; /* #DEDEE0 */
+    --primary-foreground: 220 100% 15%; /* #0A173E */
+
+    --secondary: 225 10% 76%; /* #BABDC4 */
+    --secondary-foreground: 0 0% 87%; /* #0A173E */
+
+    --accent: 30 10% 70%; /* #C0B7AD */
+    --accent-foreground: 220 100% 15%; /* #0A173E */
+
+    --muted: 0 0% 87%; /* #DEDEE0 */
+    --muted-foreground: 220 100% 15%; /* #0A173E */
+
+    --popover: 225 10% 76%; /* #BABDC4 */
+    --popover-foreground: 220 100% 15%; /* #0A173E */
+
+    --card: 225 10% 76%;
+    --card-foreground: 220 100% 15%; /* #0A173E */
+
+    --border: 0 0% 87%; /* #dedee0 */
+    --input: 225 10% 76%; /* #BABDC4 */
+
+    --destructive: 0 100% 25%; /* #80030E */
+    --destructive-foreground: 0 0% 87%; /* #DEDEE0 */
+
+    --ring: 220 100% 15%; /* #0A173E */
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+  .light {
+    --gradient: #0a173b;
+    --background: 215 100% 100%;
+    --foreground: 220 100% 15%; /* #0A173E */
+
+    --primary: 0 0% 87%; /* #DEDEE0 */
+    --primary-foreground: 220 100% 15%; /* #0A173E */
+
+    --secondary: 225 10% 76%; /* #BABDC4 */
+    --secondary-foreground: 0 0% 87%; /* #0A173E */
+
+    --accent: 30 10% 70%; /* #C0B7AD */
+    --accent-foreground: 220 100% 15%; /* #0A173E */
+
+    --muted: 0 0% 87%; /* #DEDEE0 */
+    --muted-foreground: 220 100% 15%; /* #0A173E */
+
+    --popover: 225 10% 76%; /* #BABDC4 */
+    --popover-foreground: 220 100% 15%; /* #0A173E */
+
+    --card: 225 10% 76%;
+    --card-foreground: 220 100% 15%; /* #0A173E */
+
+    --border: 0 0% 87%; /* #dedee0 */
+    --input: 225 10% 76%; /* #BABDC4 */
+
+    --destructive: 0 100% 25%; /* #80030E */
+    --destructive-foreground: 0 0% 87%; /* #DEDEE0 */
+
+    --ring: 220 100% 15%; /* #0A173E */
+
+    --radius: 0.5rem;
+  }
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: gray;
+  border: none;
+}
+
+.dot.is-selected {
+  background: red;
+}
+
+.gradientOverlay {
+  background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.7) 40%, rgba(0, 0, 0, 0)),
+    url("/imgs/Supporting/Patterns/PNG/Stars/Transparent/VA_Claims_Stars_Screen_Size_Landscape_Transparent_Pattern.png"); /* Add your background image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgba(10, 23, 59, 0.5);
+  background-blend-mode: multiply;
+}
+
+header {
+  font-family: "Oswald", sans-serif;
+  font-weight: 500; /* Bold */
+  letter-spacing: normal; /* Adjust as needed */
+  color: hsl(var(--primary-foreground)); /* Using the foreground variable for text color */
+  padding: 1rem var(--radius); /* Using the radius variable for padding */
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Oswald", sans-serif;
+  font-weight: 700; /* Bold */
+  letter-spacing: normal; /* Adjust as needed */
+}
+
+h4,
+h5,
+h6 {
+  font-family: "Lexend Deca", sans-serif;
+  letter-spacing: wide; /* Adjust as needed */
+}
+
+p {
+  font-family: "Open Sans Condensed", sans-serif;
+}
+
+@media (min-width: 640px) {
+  /* sm */
+  h1 {
+    font-size: 1.25rem; /* Adjust as needed */
+  }
+}
+
+@media (min-width: 768px) {
+  /* md */
+  h1 {
+    font-size: 1.5rem; /* Adjust as needed */
+  }
+}
+
+@media (min-width: 1024px) {
+  /* lg */
+  h1 {
+    font-size: 1.875rem; /* Adjust as needed */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.header-bg-overlay::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff4e8;
+  opacity: 0.4;
+  z-index: 0;
+}
+
+.visuals-shape {
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  line-height: 0;
+  direction: ltr;
+}
+
+.visuals-shape[data-negative="false"] {
+  transform: rotate(180deg);
+}
+
+.visuals-shape-bottom {
+  bottom: -1px;
+}
+
+.visuals-shape-fill {
+  fill: #fff;
+  transform-origin: center;
+  transform: rotateY(0deg);
+}
+
+.visuals-shape svg {
+  display: block;
+  width: calc(100% + 1.3px);
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.visuals-shape-bottom-ltr {
+  height: 80px;
+  transform: translateX(-50%) rotateY(180deg);
+}
+
+.cta-button {
+  font-family: "Lexend Deca", sans-serif;
+}
+
+.font-oswald {
+  font-family: "Oswald", sans-serif !important;
+}
+
+.font-lexend-deca {
+  font-family: "Lexend Deca", sans-serif;
+}
+
+.font-open-sans-condensed {
+  font-family: "Open Sans Condensed", sans-serif;
+}
+
+.icon-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #cab019;
+  color: #333;
+}
+
+/* stars background */
+.bg-va-claims-stars {
+  background-image: url("/imgs/VA_Claims_Stars_A4_Transparent_Pattern.png");
+  background-repeat: repeat;
+}
+
+/* stars background */
+.bg-va-claims-stars {
+  background-image: url("/imgs/VA_Claims_A6_Stripes_Transparent_Pattern.png");
+  background-repeat: repeat;
+  background-size: 422px 597px;
+}
+
+/* underline effect */
+
+.underline-hover::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  left: 50%;
+  bottom: -10px;
+  -webkit-transform: translate3d(-50%, 0, 0);
+  transform: translate3d(-50%, 0, 0);
+
+  display: block;
+  width: 0;
+  height: 2px;
+
+  background-color: currentColor;
+  transition: 0.3s width ease;
+}
+.underline-hover::after {
+  width: 25%;
+}
+.underline-hover:hover::after {
+  width: 80%;
+}
+
+.box-shadow {
+  box-shadow: 0 0 10px 0 rgb(0 0 0 / 24%);
+}
+
+.home-box {
+  background-color: #ffffff;
+  border: 1px solid #878787;
+  border-radius: 4px px;
+  box-shadow:
+    0px 5px 7px -3px rgba(0, 0, 0, 0.5),
+    inset 0px 0px 3px 1px #a7a7a7;
+}
+
+.sticky-nav {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.sticky-nav .text-xl,
+.sticky-nav .text-2xl,
+.sticky-nav .text-3xl {
+  font-size: 0.875rem; /* Adjust this value as needed */
+}
+
+.translucent-overlay::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.5); /* Adjust the opacity as needed */
+  z-index: 0;
+}
+
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(30px);
+  visibility: hidden;
+  transition:
+    opacity 0.99s ease-out,
+    transform 0.9s ease-out;
+}
+
+/* State when the section is in the viewport */
+.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+
+.card-shadow {
+  box-shadow: 3px 1px 9px 0px #000000;
+}
+
+#clearpath-long::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+.dark-after::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000;
+  opacity: 0.6;
+  z-index: 0;
+}
+
+.medium-dark-after::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000;
+  opacity: 0.2;
+  z-index: 0;
+}
+
+.white-after::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+.medium-white-after::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  opacity: 0.65;
+  z-index: 0;
+}
+
+.tan-after::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff4e8;
+  opacity: 0.95;
+  z-index: 0;
+}
+
+.image-border {
+  border: 5px solid #fff;
+  border-image: linear-gradient(#00000000, #fdc03a8a) 1;
+  box-shadow: 0px 5px 13px -8px #c7c7ff;
+}
+
+.thick-icon {
+  border: 4px solid !important;
+  border-color: black;
+  opacity: 1 !important;
+  border-radius: 50%;
+  height: 32px;
+  width: 32px;
+}
