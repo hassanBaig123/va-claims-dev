@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+      }
+      .header {
+        background-color: #0a173b;
+        color: #ffffff;
+        padding: 20px;
+        text-align: center;
+      }
+      .header img {
+        max-width: 150px;
+        height: auto;
+      }
+      .header h1 {
+        font-size: 24px;
+        margin: 10px 0 0 0;
+      }
+    </style>
+  </head>
+  <body
+    style="
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+    "
+  >
+    <!-- Header -->
+    <div
+      class="header"
+      style="
+        background-color: #0a173b;
+        color: #ffffff;
+        padding: 15px;
+        text-align: center;
+        border-radius: 5px;
+      "
+    >
+      <img
+        src="https://va-claims-assets.s3.us-west-2.amazonaws.com/VA_Claims_Main_Logo_Transparent_2_200px.png"
+        alt="VA Claims Academy Logo"
+        style="max-width: 100px; height: auto"
+      />
+    </div>
+
+    <!-- Email Body -->
+    <div style="padding: 20px">
+      <p style="font-size: 16px">Hi <%= name %>,</p>
+
+      <p style="font-size: 16px">
+        Great news! We've officially approved your initial intake form, and now
+        it's time to take the next crucial step toward building a stronger VA
+        claim.
+      </p>
+
+      <p style="font-size: 16px">
+        We've created a set of
+        <strong style="color: #0a173b">Detail-Builder Questionnaires</strong>
+        designed to help you provide more powerful evidence about your
+        conditions.
+      </p>
+
+      <p style="font-size: 16px">
+        <strong style="color: #0a173b"
+          >The more information you provide, the stronger your case becomes,
+          giving you the best chance at securing the benefits you
+          deserve.</strong
+        >
+      </p>
+
+      <p style="font-size: 16px">
+        Click the link below to access your Detail Builder Questionnaires and
+        continue your journey toward mastering your claim:
+      </p>
+
+      <p style="text-align: center">
+        <a
+          href="<%= formLink %>"
+          style="
+            background-color: #0a173b;
+            color: #ffffff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+          "
+          >Access Your Detail Builder Questionnaires</a
+        >
+      </p>
+
+      <p style="font-size: 16px">
+        Every step you take brings you closer to a solid, well-supported claim.
+        We're with you every step of the way.
+      </p>
+    </div>
+
+    <!-- Footer -->
+    <div
+      style="
+        margin-top: 20px;
+        border-top: 1px solid #ccc;
+        padding-top: 10px;
+        font-size: 16px;
+        display: flex;
+        justify-content: center;
+      "
+    >
+      <p style="font-size: 16px">
+        In your corner,<br />
+        -VA Claims Academy Team
+      </p>
+    </div>
+  </body>
+</html>
