@@ -1,0 +1,416 @@
+"use client"
+
+import * as React from "react"
+import { CaretSortIcon, CheckIcon } from "@radix-ui/react-icons"
+
+import { cn } from "@/lib/utils"
+import { Button } from "@/components/ui/button"
+import {
+    Command,
+    CommandEmpty,
+    CommandGroup,
+    CommandInput,
+    CommandItem,
+} from "@/components/ui/command"
+import {
+    Popover,
+    PopoverContent,
+    PopoverTrigger,
+} from "@/components/ui/popover"
+
+const conditions = [
+    {
+
+        value: "Kidney removal",
+        label: "Kidney removal",
+        description: "Surgical removal of a kidney",
+        system: "Kidney",
+        keywords: ["nephrectomy", "kidney", "removal", "surgical"]
+    },
+    {
+        value: "Kidney abscess",
+        label: "Kidney abscess",
+        description: "Pus-filled pocket in the kidney",
+        system: "Kidney",
+        keywords: ["abscess", "kidney", "pus", "pocket", "infection"]
+    },
+    {
+        value: "Chronic nephritis",
+        label: "Chronic nephritis",
+        description: "Long-term inflammation of the kidneys",
+        system: "Kidneys",
+        keywords: ["chronic", "nephritis", "inflammation", "long-term"]
+    },
+    {
+        value: "Chronic pyelonephritis",
+        label: "Chronic pyelonephritis",
+        description: "Long-term inflammation of the kidney and renal pelvis",
+        system: "Kidney, renal pelvis",
+        keywords: ["chronic", "pyelonephritis", "inflammation", "kidney", "renal", "pelvis", "long-term"]
+    },
+    {
+        value: "Kidney tuberculosis",
+        label: "Kidney tuberculosis",
+        description: "Tuberculosis infection of the kidney",
+        system: "Kidney",
+        keywords: ["tuberculosis", "kidney", "infection"]
+    },
+    {
+        value: "Arteriolar nephrosclerosis",
+        label: "Arteriolar nephrosclerosis",
+        description: "Hardening of small blood vessels in the kidney",
+        system: "Kidney, blood vessels",
+        keywords: ["arteriolar", "nephrosclerosis", "hardening", "small", "blood", "vessels", "kidney"]
+    },
+    {
+        value: "Nephrolithiasis",
+        label: "Nephrolithiasis",
+        description: "Kidney stones",
+        system: "Kidney",
+        keywords: ["nephrolithiasis", "kidney", "stones"]
+    },
+    {
+        value: "Hydronephrosis",
+        label: "Hydronephrosis",
+        description: "Swelling of the kidney due to urine buildup",
+        system: "Kidney",
+        keywords: ["hydronephrosis", "swelling", "kidney", "urine", "buildup"]
+    },
+    {
+        value: "Ureterolithiasis",
+        label: "Ureterolithiasis",
+        description: "Ureteral stones",
+        system: "Ureter",
+        keywords: ["ureterolithiasis", "ureteral", "stones"]
+    },
+    {
+        value: "Ureteral stricture",
+        label: "Ureteral stricture",
+        description: "Narrowing of the ureter",
+        system: "Ureter",
+        keywords: ["ureteral", "stricture", "narrowing", "ureter"]
+    },
+    {
+        value: "Chronic cystitis",
+        label: "Chronic cystitis",
+        description: "Long-term inflammation of the bladder",
+        system: "Bladder",
+        keywords: ["chronic", "cystitis", "inflammation", "bladder", "long-term"]
+    },
+    {
+        value: "Bladder calculus",
+        label: "Bladder calculus",
+        description: "Stone in the bladder",
+        system: "Bladder",
+        keywords: ["bladder", "calculus", "stone"]
+    },
+    {
+        value: "Bladder fistula",
+        label: "Bladder fistula",
+        description: "Abnormal connection between the bladder and another organ",
+        system: "Bladder",
+        keywords: ["bladder", "fistula", "abnormal", "connection", "organ"]
+    },
+    {
+        value: "Bladder injury",
+        label: "Bladder injury",
+        description: "Damage to the bladder",
+        system: "Bladder",
+        keywords: ["bladder", "injury", "damage"]
+    },
+    {
+        value: "Urethral stricture",
+        label: "Urethral Stricture",
+        description: "Narrowing of the urethra",
+        system: "Urethra",
+        keywords: ["urethral", "stricture", "narrowing", "urethra"]
+    },
+    {
+        value: "Urethral fistula",
+        label: "Urethral Fistula",
+        description: "Abnormal connection between the urethra and another organ",
+        system: "Urethra",
+        keywords: ["urethral", "fistula", "abnormal", "connection", "organ"]
+    },
+    {
+        value: "Chronic pyelonephritis",
+        label: "Chronic Pyelonephritis",
+        description: "Long-term inflammation of the kidney and renal pelvis",
+        system: "Kidney, renal pelvis",
+        keywords: ["chronic", "pyelonephritis", "inflammation", "kidney", "renal", "pelvis", "long-term"]
+    },
+    {
+        value: "Kidney tuberculosis",
+        label: "Kidney Tuberculosis",
+        description: "Tuberculosis infection of the kidney",
+        system: "Kidney",
+        keywords: ["tuberculosis", "kidney", "infection"]
+    },
+    {
+        value: "Arteriolar nephrosclerosis",
+        label: "Arteriolar Nephrosclerosis",
+        description: "Hardening of small blood vessels in the kidney",
+        system: "Kidney, blood vessels",
+        keywords: ["arteriolar", "nephrosclerosis", "hardening", "small", "blood", "vessels", "kidney"]
+    },
+    {
+        value: "Nephrolithiasis",
+        label: "Nephrolithiasis",
+        description: "Kidney stones",
+        system: "Kidney",
+        keywords: ["nephrolithiasis", "kidney", "stones"]
+    },
+    {
+        value: "Hydronephrosis",
+        label: "Hydronephrosis",
+        description: "Swelling of the kidney due to urine buildup",
+        system: "Kidney",
+        keywords: ["hydronephrosis", "swelling", "kidney", "urine", "buildup"]
+    },
+    {
+        value: "Ureterolithiasis",
+        label: "Ureterolithiasis",
+        description: "Ureteral stones",
+        system: "Ureter",
+        keywords: ["ureterolithiasis", "ureteral", "stones"]
+    },
+    {
+        value: "Ureteral stricture",
+        label: "Ureteral Stricture",
+        description: "Narrowing of the ureter",
+        system: "Ureter",
+        keywords: ["ureteral", "stricture", "narrowing", "ureter"]
+    },
+    {
+        value: "Chronic cystitis",
+        label: "Chronic Cystitis",
+        description: "Long-term inflammation of the bladder",
+        system: "Bladder",
+        keywords: ["chronic", "cystitis", "inflammation", "bladder", "long-term"]
+    },
+    {
+        value: "Bladder calculus",
+        label: "Bladder Calculus",
+        description: "Stone in the bladder",
+        system: "Bladder",
+        keywords: ["bladder", "calculus", "stone"]
+    },
+    {
+        value: "Bladder fistula",
+        label: "Bladder Fistula",
+        description: "Abnormal connection between the bladder and another organ",
+        system: "Bladder",
+        keywords: ["bladder", "fistula", "abnormal", "connection", "organ"]
+    },
+    {
+        value: "Bladder injury",
+        label: "Bladder Injury",
+        description: "Damage to the bladder",
+        system: "Bladder",
+        keywords: ["bladder", "injury", "damage"]
+    },
+    {
+        value: "Penile removal",
+        label: "Penile Removal",
+        description: "Surgical removal of half or more of the penis",
+        system: "Penis",
+        keywords: ["penile", "removal", "surgical", "half", "more"]
+    },
+    {
+        value: "Glans removal",
+        label: "Glans Removal",
+        description: "Surgical removal of the glans penis",
+        system: "Penis, glans",
+        keywords: ["glans", "removal", "surgical", "penis"]
+    },
+    {
+        value: "Penile deformity",
+        label: "Penile Deformity",
+        description: "Abnormal shape of the penis with loss of erectile function",
+        system: "Penis",
+        keywords: ["penile", "deformity", "abnormal", "shape", "loss", "erectile", "function"]
+    },
+    {
+        value: "Testicular atrophy",
+        label: "Testicular Atrophy",
+        description: "Shrinkage of the testicles",
+        system: "Testicles",
+        keywords: ["testicular", "atrophy", "shrinkage", "testicles"]
+    },
+    {
+        value: "Testicular removal",
+        label: "Testicular Removal",
+        description: "Surgical removal of a testicle",
+        system: "Testicle",
+        keywords: ["testicular", "removal", "surgical", "testicle"]
+    },
+    {
+        value: "Chronic epididymo-orchitis",
+        label: "Chronic Epididymo-Orchitis",
+        description: "Long-term inflammation of the epididymis and testicle",
+        system: "Epididymis, testicle",
+        keywords: ["chronic", "epididymo-orchitis", "inflammation", "epididymis", "testicle", "long-term"]
+    },
+    {
+        value: "Prostate gland conditions",
+        label: "Prostate Gland Conditions",
+        description: "Disorders affecting the prostate gland",
+        system: "Prostate gland",
+        keywords: ["prostate", "gland", "conditions", "disorders"]
+    },
+    {
+        value: "Malignant neoplasms",
+        label: "Malignant Neoplasms",
+        description: "Cancerous tumors",
+        system: "Various",
+        keywords: ["malignant", "neoplasms", "cancerous", "tumors"]
+    },
+    {
+        value: "Benign neoplasms",
+        label: "Benign Neoplasms",
+        description: "Non-cancerous tumors",
+        system: "Various",
+        keywords: ["benign", "neoplasms", "non-cancerous", "tumors"]
+    },
+    {
+        value: "Chronic renal disease",
+        label: "Chronic Renal Disease",
+        description: "Long-term kidney disease",
+        system: "Kidneys",
+        keywords: ["chronic", "renal", "disease", "long-term", "kidney"]
+    },
+    {
+        value: "Kidney transplant",
+        label: "Kidney Transplant",
+        description: "Surgical replacement of a kidney",
+        system: "Kidney",
+        keywords: ["kidney", "transplant", "surgical", "replacement"]
+    },
+    {
+        value: "Renal tubular disorders",
+        label: "Renal Tubular Disorders",
+        description: "Disorders affecting the tubules of the kidney",
+        system: "Kidney, renal tubules",
+        keywords: ["renal", "tubular", "disorders", "kidney", "tubules"]
+    },
+    {
+        value: "Cystic kidney diseases",
+        label: "Cystic Kidney Diseases",
+        description: "Disorders characterized by fluid-filled sacs in the kidneys",
+        system: "Kidneys",
+        keywords: ["cystic", "kidney", "diseases", "fluid-filled", "sacs"]
+    },
+    {
+        value: "Atherosclerotic renal disease",
+        label: "Atherosclerotic Renal Disease",
+        description: "Kidney disease caused by hardening of the arteries",
+        system: "Kidneys, arteries",
+        keywords: ["atherosclerotic", "renal", "disease", "hardening", "arteries", "kidney"]
+    },
+    {
+        value: "Toxic nephropathy",
+        label: "Toxic Nephropathy",
+        description: "Kidney damage caused by toxins",
+        system: "Kidneys",
+        keywords: ["toxic", "nephropathy", "kidney", "damage", "toxins"]
+    },
+    {
+        value: "Glomerulonephritis",
+        label: "Glomerulonephritis",
+        description: "Inflammation of the kidney's filtering units (glomeruli)",
+        system: "Kidneys, glomeruli",
+        keywords: ["glomerulonephritis", "inflammation", "kidney", "filtering", "units", "glomeruli"]
+    },
+    {
+        value: "Interstitial nephritis",
+        label: "Interstitial Nephritis",
+        description: "Inflammation of the kidney's interstitial tissue",
+        system: "Kidneys, interstitial tissue",
+        keywords: ["interstitial", "nephritis", "inflammation", "kidney", "tissue"]
+    },
+    {
+        value: "Papillary necrosis",
+        label: "Papillary Necrosis",
+        description: "Death of the kidney's papillae",
+        system: "Kidneys, papillae",
+        keywords: ["papillary", "necrosis", "death", "kidney", "papillae"]
+    },
+    {
+        value: "Renal amyloid disease",
+        label: "Renal Amyloid Disease",
+        description: "Buildup of amyloid proteins in the kidneys",
+        system: "Kidneys",
+        keywords: ["renal", "amyloid", "disease", "buildup", "proteins", "kidney"]
+    },
+    {
+        value: "Disseminated intravascular coagulation",
+        label: "Disseminated Intravascular Coagulation",
+        description: "Blood clotting disorder affecting multiple organs",
+        system: "Various, blood vessels",
+        keywords: ["disseminated", "intravascular", "coagulation", "blood", "clotting", "disorder", "multiple", "organs"]
+    },
+    {
+        value: "Renal involvement in systemic diseases",
+        label: "Renal Involvement in Systemic Diseases",
+        description: "Kidney problems associated with body-wide diseases",
+        system: "Kidneys",
+        keywords: ["renal", "involvement", "systemic", "diseases", "kidney", "problems", "body-wide"]
+    },
+    {
+        value: "Neurogenic bladder",
+        label: "Neurogenic Bladder",
+        description: "Bladder dysfunction due to nerve damage",
+        system: "Bladder, nerves",
+        keywords: ["neurogenic", "bladder", "dysfunction", "nerve", "damage"]
+    }
+]
+
+export function ConditionSearchBox() {
+    const [open, setOpen] = React.useState(false)
+    const [value, setValue] = React.useState("")
+    
+    return (
+        <Popover open={open} onOpenChange={setOpen}>
+          <PopoverTrigger asChild>
+            <Button
+              variant="outline"
+              role="combobox"
+              aria-expanded={open}
+              className="w-[200px] justify-between"
+            >
+              {value
+                ? conditions.find((condition) => condition.value === value)?.label
+                : "Select condition..."}
+              <CaretSortIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+            </Button>
+          </PopoverTrigger>
+          <PopoverContent className="w-[200px] p-0">
+            <Command>
+              <CommandInput placeholder="Search framework..." className="h-9" />
+              <CommandEmpty>No framework found.</CommandEmpty>
+              <CommandGroup>
+                {conditions.map((condition) => (
+                  <CommandItem
+                    key={condition.value}
+                    value={condition.value}
+                    onSelect={(currentValue) => {
+                      setValue(currentValue === value ? "" : currentValue)
+                      setOpen(false)
+                    }}
+                  >
+                    {condition.label}
+                    <CheckIcon
+                      className={cn(
+                        "ml-auto h-4 w-4",
+                        value === condition.value ? "opacity-100" : "opacity-0"
+                      )}
+                    />
+                  </CommandItem>
+                ))}
+              </CommandGroup>
+            </Command>
+          </PopoverContent>
+        </Popover>
+    )
+}
+
