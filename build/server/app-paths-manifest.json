@@ -1,1 +1,6 @@
-{}
+{
+  "/api/user/userTier/route": "app/api/user/userTier/route.js",
+  "/(home)/page": "app/(home)/page.js",
+  "/login/page": "app/login/page.js",
+  "/(customer)/(user)/todos/page": "app/(customer)/(user)/todos/page.js"
+}
