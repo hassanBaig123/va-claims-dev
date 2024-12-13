@@ -1,0 +1,13 @@
+{
+    "folders": [
+        {
+            "path": "../../../AgentWorkflowService"
+        },
+        {
+            "path": "../../../backend"
+        },
+        {
+            "path": "../.."
+        }
+    ]
+}

@@ -1,0 +1,110 @@
+// utils/users/courseUtils.ts
+
+import { createClient } from '@/utils/supabase/server'
+
+interface Video {
+  url: string
+  videoId: string
+  lessonType: string
+  videoTitle: string
+  description: string
+}
+
+interface Module {
+  videos: Video[]
+  moduleId: number
+  moduleTitle: string
+}
+
+interface CourseContent {
+  modules: Module[]
+  courseId: string
+  courseTitle: string
+  courseDescription: string
+  coursePreview?: string
+}
+
+interface DatabaseCourse {
+  id: string
+  name: string
+  content: string | CourseContent
+  product_id: string | null
+}
+
+export interface ProcessedCourse {
+  id: string // This is the database ID
+  name: string
+  courseId: string // This is the courseId from the content (if needed)
+  courseTitle: string
+  courseDescription: string
+  coursePreview?: string
+  progress: number
+  nextUnwatchedVideo: Video | null
+  content: CourseContent
+}
+
+export async function getUserCourses(
+  userId: string,
+): Promise<ProcessedCourse[]> {
+  const supabase = await createClient()
+
+  try {
+    // Fetch user courses
+    const { data: userCourses, error: userCoursesError } = await supabase
+      .from('user_courses')
+      .select('*')
+      .eq('user_id', userId)
+
+    if (userCoursesError) throw userCoursesError
+
+    // Fetch course details
+    const { data: courses, error: coursesError } = (await supabase
+      .from('courses')
+      .select('*')
+      .in(
+        'id',
+        userCourses.map((uc) => uc.course_id),
+      )) as { data: DatabaseCourse[]; error: any }
+
+    if (coursesError) throw coursesError
+
+    // Process courses
+    const processedCourses = courses.map((course: DatabaseCourse) => {
+      const userCourse = userCourses.find((uc) => uc.course_id === course.id)
+      const watchedVideos: { [key: string]: boolean } =
+        typeof userCourse?.watched_videos === 'string'
+          ? JSON.parse(userCourse.watched_videos)
+          : userCourse?.watched_videos || {}
+
+      const content: CourseContent =
+        typeof course.content === 'string'
+          ? (JSON.parse(course.content) as CourseContent)
+          : (course.content as CourseContent)
+
+      const allVideos = content.modules.flatMap((module) => module.videos)
+      const totalVideos = allVideos.length
+      const watchedCount = Object.values(watchedVideos).filter(Boolean).length
+      const progress = totalVideos > 0 ? (watchedCount / totalVideos) * 100 : 0
+
+      const nextUnwatchedVideo =
+        allVideos.find((video) => !watchedVideos[video.videoId]) || null
+
+      return {
+        id: course.id,
+        name: course.name,
+        courseId: content.courseId, // Keep this if needed for other purposes
+        courseTitle: content.courseTitle,
+        courseDescription: content.courseDescription,
+        coursePreview: content.coursePreview,
+        progress,
+        nextUnwatchedVideo,
+        content: content,
+      }
+    })
+
+    return processedCourses
+  } catch (error) {
+    console.error('Error fetching user courses:', error)
+    throw error
+  }
+}
