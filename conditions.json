@@ -1,0 +1,571 @@
+[
+  {
+    "code": 1000,
+    "value": "Anxiety Disorders",
+    "label": "Anxiety Disorders",
+    "description": "Mental health disorders characterized by feelings of worry, anxiety, or fear that are strong enough to interfere with daily activities",
+    "keywords": ["anxiety", "worry", "fear", "panic", "phobia", "mental health"],
+    "category": "Mental"
+  },
+  {
+    "code": 1001,
+    "value": "Bipolar Disorder",
+    "label": "Bipolar Disorder",
+    "description": "A mental health condition that causes extreme mood swings that include emotional highs (mania or hypomania) and lows (depression)",
+    "keywords": ["bipolar", "mood swings", "mania", "depression", "mental health"],
+    "category": "Mental"
+  },
+  {
+    "code": 1002,
+    "value": "Chronic Adjustment Disorder",
+    "label": "Chronic Adjustment Disorder",
+    "description": "A stress-related condition that occurs when a person has difficulty coping with a stressful life event for an extended period",
+    "keywords": ["adjustment disorder", "stress", "coping", "mental health"],
+    "category": "Mental"
+  },
+  {
+    "code": 1003,
+    "value": "Depression",
+    "label": "Depression",
+    "description": "A mental health disorder characterized by persistently depressed mood or loss of interest in activities, causing significant impairment in daily life",
+    "keywords": ["depression", "mood disorder", "sadness", "mental health"],
+    "category": "Mental"
+  },
+  {
+    "code": 1004,
+    "value": "Eating Disorders",
+    "label": "Eating Disorders",
+    "description": "Serious conditions related to persistent eating behaviors that negatively impact health, emotions, and ability to function in important areas of life",
+    "keywords": ["eating disorder", "anorexia", "bulimia", "binge eating", "mental health"],
+    "category": "Mental"
+  },
+  {
+    "code": 1005,
+    "value": "Obsessive Compulsive Disorder (OCD)",
+    "label": "Obsessive Compulsive Disorder (OCD)",
+    "description": "A mental health disorder characterized by uncontrollable, reoccurring thoughts (obsessions) and/or behaviors (compulsions) that a person feels the urge to repeat",
+    "keywords": ["OCD", "obsessive", "compulsive", "intrusive thoughts", "mental health"],
+    "category": "Mental"
+  },
+  {
+    "code": 1006,
+    "value": "Post-traumatic stress disorder (PTSD)",
+    "label": "Post-traumatic stress disorder (PTSD)",
+    "description": "A mental health condition triggered by experiencing or witnessing a terrifying event, causing flashbacks, nightmares, and severe anxiety",
+    "keywords": ["PTSD", "trauma", "flashbacks", "anxiety", "mental health"],
+    "category": "PTSD"
+  },
+  {
+    "code": 1007,
+    "value": "Schizophrenia",
+    "label": "Schizophrenia",
+    "description": "A chronic and severe mental disorder that affects how a person thinks, feels, and behaves, often experiencing reality abnormally",
+    "keywords": ["schizophrenia", "psychosis", "hallucinations", "delusions", "mental health"],
+    "category": "Mental"
+  },
+  {
+    "code": 2000,
+    "value": "Hypertension",
+    "label": "Hypertension",
+    "description": "A chronic medical condition in which the blood pressure in the arteries is persistently elevated",
+    "keywords": ["high blood pressure", "hypertension", "cardiovascular", "heart disease"],
+    "category": "Cardiovascular"
+  },
+  {
+    "code": 2001,
+    "value": "Ischemic Heart Disease",
+    "label": "Ischemic Heart Disease",
+    "description": "A condition characterized by reduced blood supply to the heart muscle, usually due to coronary artery disease",
+    "keywords": ["heart disease", "coronary artery disease", "cardiovascular", "angina"],
+    "category": "Cardiovascular"
+  },
+  {
+    "code": 2002,
+    "value": "Heart Arrhythmia",
+    "label": "Heart Arrhythmia",
+    "description": "An irregular heartbeat or abnormal heart rhythm, where the heart beats too fast, too slow, or erratically",
+    "keywords": ["arrhythmia", "irregular heartbeat", "heart rhythm", "cardiovascular"],
+    "category": "Cardiovascular"
+  },
+  {
+    "code": 2003,
+    "value": "Bruxism",
+    "label": "Bruxism",
+    "description": "A condition characterized by excessive teeth grinding or jaw clenching, often occurring during sleep",
+    "keywords": ["teeth grinding", "jaw clenching", "dental", "sleep disorder"],
+    "category": "Dental/Oral"
+  },
+  {
+    "code": 3000,
+    "value": "Colon Cancer",
+    "label": "Colon Cancer",
+    "description": "A type of cancer that begins in the large intestine (colon), the final part of the digestive tract",
+    "keywords": ["colon cancer", "colorectal cancer", "intestinal cancer", "oncology"],
+    "category": "Digestive"
+  },
+  {
+    "code": 3001,
+    "value": "Esophageal Cancer",
+    "label": "Esophageal Cancer",
+    "description": "Cancer that occurs in the esophagus, a long, hollow tube that runs from the throat to the stomach",
+    "keywords": ["esophageal cancer", "throat cancer", "digestive cancer", "oncology"],
+    "category": "Digestive"
+  },
+  {
+    "code": 3002,
+    "value": "Gastroesophageal Reflux Disease (GERD)",
+    "label": "Gastroesophageal Reflux Disease (GERD)",
+    "description": "A digestive disorder that occurs when stomach acid frequently flows back into the esophagus",
+    "keywords": ["GERD", "acid reflux", "heartburn", "digestive disorder"],
+    "category": "Gastroesophageal Reflux Disease"
+  },
+  {
+    "code": 3003,
+    "value": "Hemorrhoids",
+    "label": "Hemorrhoids",
+    "description": "Swollen veins in the lowest part of the rectum and anus, often causing discomfort and bleeding",
+    "keywords": ["hemorrhoids", "piles", "rectal bleeding", "anal discomfort"],
+    "category": "Digestive"
+  },
+  {
+    "code": 3004,
+    "value": "Irritable Bowel Syndrome (IBS)",
+    "label": "Irritable Bowel Syndrome (IBS)",
+    "description": "A common disorder that affects the large intestine, causing abdominal pain, cramping, bloating, and changes in bowel movements",
+    "keywords": ["IBS", "bowel disorder", "digestive issues", "abdominal pain"],
+    "category": "Irritable Bowel Syndrome"
+  },
+  {
+    "code": 4000,
+    "value": "Ageusia and Anosmia",
+    "label": "Ageusia and Anosmia (Loss of taste and smell)",
+    "description": "Conditions characterized by the loss of taste (ageusia) and smell (anosmia), which can significantly impact quality of life",
+    "keywords": ["taste loss", "smell loss", "sensory disorder", "ageusia", "anosmia"],
+    "category": "Neurological"
+  },
+  {
+    "code": 4001,
+    "value": "Glaucoma",
+    "label": "Glaucoma",
+    "description": "A group of eye conditions that damage the optic nerve, often caused by abnormally high pressure in the eye",
+    "keywords": ["glaucoma", "eye pressure", "vision loss", "ophthalmology"],
+    "category": "Eye Conditions"
+  },
+  {
+    "code": 4002,
+    "value": "Meniere's Disease",
+    "label": "Meniere's Disease",
+    "description": "An inner ear disorder that can cause vertigo, hearing loss, tinnitus, and a feeling of fullness in the ear",
+    "keywords": ["Meniere's", "vertigo", "hearing loss", "tinnitus", "inner ear"],
+    "category": "Meniere's Disease"
+  },
+  {
+    "code": 4003,
+    "value": "Partial or severe hearing loss",
+    "label": "Partial or severe hearing loss (tinnitus)",
+    "description": "Reduction in the ability to hear, often accompanied by tinnitus (ringing in the ears)",
+    "keywords": ["hearing loss", "deafness", "tinnitus", "auditory disorder"],
+    "category": "Ear Conditions"
+  },
+  {
+    "code": 4004,
+    "value": "Vertigo",
+    "label": "Vertigo",
+    "description": "A sensation of feeling off balance or that you or your surroundings are spinning or moving",
+    "keywords": ["vertigo", "dizziness", "balance disorder", "inner ear"],
+    "category": "Ear Conditions"
+  },
+  {
+    "code": 4005,
+    "value": "Tinnitus",
+    "label": "Tinnitus",
+    "description": "The perception of noise or ringing in the ears when no external sound is present, often described as a ringing, buzzing, hissing, or whistling sound",
+    "keywords": ["ringing in ears", "ear noise", "phantom sounds", "auditory disorder"],
+    "category": "Ear Conditions"
+  },
+  {
+    "code": 5000,
+    "value": "Diabetes",
+    "label": "Diabetes",
+    "description": "A group of diseases that result in too much sugar in the blood (high blood glucose)",
+    "keywords": ["diabetes", "blood sugar", "insulin", "metabolic disorder"],
+    "category": "Endocrine System"
+  },
+  {
+    "code": 5001,
+    "value": "Hypothyroidism",
+    "label": "Hypothyroidism",
+    "description": "A condition in which the thyroid gland doesn't produce enough thyroid hormone, leading to various symptoms",
+    "keywords": ["hypothyroidism", "underactive thyroid", "thyroid disorder", "endocrine"],
+    "category": "Endocrine System"
+  },
+  {
+    "code": 5002,
+    "value": "Kidney Stones",
+    "label": "Kidney Stones",
+    "description": "Hard deposits made of minerals and salts that form inside the kidneys, causing pain when passing through the urinary tract",
+    "keywords": ["kidney stones", "renal calculi", "urinary tract", "nephrolithiasis"],
+    "category": "Genitourinary System"
+  },
+  {
+    "code": 5003,
+    "value": "Urinary Incontinence",
+    "label": "Urinary Incontinence",
+    "description": "Loss of bladder control, ranging from occasionally leaking urine to having an uncontrollable urge to urinate",
+    "keywords": ["incontinence", "bladder control", "urinary leakage", "overactive bladder"],
+    "category": "Genitourinary System"
+  },
+  {
+    "code": 5004,
+    "value": "Uterine Fibroids",
+    "label": "Uterine Fibroids",
+    "description": "Noncancerous growths of the uterus that often appear during childbearing years",
+    "keywords": ["fibroids", "uterine tumors", "leiomyomas", "gynecology"],
+    "category": "Gynecological Conditions"
+  },
+  {
+    "code": 5271,
+    "value": "Ankle",
+    "label": "Ankle",
+    "description":  "Various conditions affecting the ankle joint, including sprains, strains, arthritis, and instability, which can cause pain, swelling, and limited mobility",
+    "keywords": ["ankle", "leg joint", "talus bone", "foot joint"],
+    "category": "Ankle"
+  },
+  {
+    "code": 6000,
+    "value": "Chronic Fatigue Syndrome",
+    "label": "Chronic Fatigue Syndrome",
+    "description": "A complicated disorder characterized by extreme fatigue that can't be explained by any underlying medical condition",
+    "keywords": ["CFS", "myalgic encephalomyelitis", "fatigue", "ME/CFS"],
+    "category": "Chronic Fatigue Syndrome"
+  },
+  {
+    "code": 7000,
+    "value": "Bone Spurs",
+    "label": "Bone Spurs",
+    "description": "Bony projections that develop along bone edges, often where bones meet each other in joints",
+    "keywords": ["bone spurs", "osteophytes", "joint pain", "arthritis"],
+    "category": "Musculoskeletal"
+  },
+  {
+    "code": 7001,
+    "value": "Bulging or Herniated Disc",
+    "label": "Bulging or Herniated Disc",
+    "description": "A condition where a disc in the spine protrudes or ruptures, potentially causing pain and nerve compression",
+    "keywords": ["herniated disc", "slipped disc", "back pain", "sciatica"],
+    "category": "Musculoskeletal"
+  },
+  {
+    "code": 7002,
+    "value": "Carpal Tunnel",
+    "label": "Carpal Tunnel",
+    "description": "A condition that causes numbness, tingling, and weakness in the hand and arm due to pressure on the median nerve in the wrist",
+    "keywords": ["carpal tunnel syndrome", "wrist pain", "nerve compression", "repetitive strain"],
+    "category": "Musculoskeletal"
+  },
+  {
+    "code": 7003,
+    "value": "Cervical Strain",
+    "label": "Cervical Strain",
+    "description": "An injury to the muscles and tendons in the neck, often caused by sudden movements or prolonged poor posture",
+    "keywords": ["neck strain", "whiplash", "cervical sprain", "neck pain"],
+    "category": "Musculoskeletal"
+  },
+  {
+    "code": 7004,
+    "value": "Chronic Back Pain",
+    "label": "Chronic Back Pain",
+    "description": "Persistent pain in the back lasting for more than 12 weeks, often without a clear cause",
+    "keywords": ["back pain", "spinal pain", "lumbar pain", "chronic pain"],
+    "category": "Musculoskeletal"
+  },
+  {
+    "code": 7005,
+    "value": "Fibromyalgia",
+    "label": "Fibromyalgia",
+    "description": "A disorder characterized by widespread musculoskeletal pain accompanied by fatigue, sleep, memory and mood issues",
+    "keywords": ["fibromyalgia", "chronic pain", "widespread pain", "fatigue"],
+    "category": "Musculoskeletal"
+  },
+  {
+    "code": 7006,
+    "value": "Flatfeet",
+    "label": "Flatfeet",
+    "description": "A condition in which the arch of the foot collapses, with the entire sole of the foot coming into contact with the ground",
+    "keywords": ["flat feet", "fallen arches", "pes planus", "foot pain"],
+    "category": "Musculoskeletal"
+  },
+  {
+    "code": 7007,
+    "value": "Gout",
+    "label": "Gout",
+    "description": "A form of inflammatory arthritis characterized by sudden, severe attacks of pain, swelling, redness and tenderness in joints",
+    "keywords": ["gout", "uric acid", "joint inflammation", "arthritis"],
+    "category": "Musculoskeletal"
+  },
+  {
+    "code": 7008,
+    "value": "Hallux Valgus",
+    "label": "Hallux Valgus",
+    "description": "A foot deformity where the big toe points toward the second toe, causing a bump on the side of the foot",
+    "keywords": ["bunion", "hallux valgus", "foot deformity", "toe misalignment"],
+    "category": "Musculoskeletal"
+  },
+  {
+    "code": 7009,
+    "value": "Hip Pain",
+    "label": "Hip Pain",
+    "description": "Discomfort in or around the hip joint, which can be caused by various conditions including arthritis, bursitis, or injuries",
+    "keywords": ["hip pain", "joint pain", "hip arthritis", "hip bursitis"],
+    "category": "Musculoskeletal"
+  },
+  {
+    "code": 7010,
+    "value": "Knee Pain",
+    "label": "Knee Pain",
+    "description": "Pain in or around the knee joint, which can be caused by injuries, mechanical problems, types of arthritis, or other conditions",
+    "keywords": ["knee pain", "joint pain", "knee arthritis", "knee injury"],
+    "category": "Musculoskeletal"
+  },
+  {
+    "code": 7011,
+    "value": "Lumbar Strain",
+    "label": "Lumbar Strain",
+    "description": "An injury to the lower back, specifically to the muscles, tendons, and ligaments in the lumbar region",
+    "keywords": ["lower back strain", "lumbar sprain", "back injury", "back pain"],
+    "category": "Musculoskeletal"
+  },
+  {
+    "code": 7012,
+    "value": "Plantar fasciitis",
+    "label": "Plantar fasciitis",
+    "description": "Inflammation of the plantar fascia, a thick band of tissue that connects the heel bone to the toes, causing heel pain",
+    "keywords": ["heel pain", "foot pain", "arch pain", "heel spur"],
+    "category": "Musculoskeletal"
+  },
+  {
+    "code": 7013,
+    "value": "Rheumatoid Arthritis",
+    "label": "Rheumatoid Arthritis",
+    "description": "An autoimmune disorder that causes inflammation of the joints and surrounding tissues, often affecting multiple joints",
+    "keywords": ["RA", "autoimmune arthritis", "joint inflammation", "chronic pain"],
+    "category": "Musculoskeletal"
+  },
+  {
+    "code": 7014,
+    "value": "Scoliosis",
+    "label": "Scoliosis",
+    "description": "A sideways curvature of the spine that most often occurs during the growth spurt just before puberty",
+    "keywords": ["spinal curvature", "spine deformity", "back condition", "postural abnormality"],
+    "category": "Musculoskeletal"
+  },
+  {
+    "code": 7015,
+    "value": "Shin Splints",
+    "label": "Shin Splints",
+    "description": "Pain along the shin bone (tibia) — the large bone in the front of your lower leg",
+    "keywords": ["medial tibial stress syndrome", "leg pain", "exercise-induced leg pain", "runner's leg"],
+    "category": "Musculoskeletal"
+  },
+  {
+    "code": 7016,
+    "value": "Shoulder Rotator Cuff Tear",
+    "label": "Shoulder Rotator Cuff Tear",
+    "description": "A tear in one or more of the tendons surrounding the shoulder joint, causing pain and reduced range of motion",
+    "keywords": ["rotator cuff injury", "shoulder pain", "tendon tear", "shoulder weakness"],
+    "category": "Musculoskeletal"
+  },
+  {
+    "code": 7017,
+    "value": "Spinal Stenosis",
+    "label": "Spinal Stenosis",
+    "description": "A narrowing of the spaces within your spine, which can put pressure on the nerves that travel through the spine",
+    "keywords": ["spinal narrowing", "nerve compression", "back pain", "sciatica"],
+    "category": "Musculoskeletal"
+  },
+  {
+    "code": 7018,
+    "value": "Tendonitis",
+    "label": "Tendonitis",
+    "description": "Inflammation or irritation of a tendon, often caused by repetitive movements or sudden injury",
+    "keywords": ["tendon inflammation", "overuse injury", "joint pain", "repetitive strain"],
+    "category": "Musculoskeletal"
+  },
+  {
+    "code": 7019,
+    "value": "TMJ",
+    "label": "TMJ",
+    "description": "Temporomandibular joint disorders, causing pain and dysfunction in the jaw joint and muscles controlling jaw movement",
+    "keywords": ["jaw pain", "temporomandibular joint", "facial pain", "bite problems"],
+    "category": "Musculoskeletal"
+  },
+  {
+    "code": 7020,
+    "value": "CRPS",
+    "label": "CRPS",
+    "description": "Complex Regional Pain Syndrome, a chronic pain condition that most often affects one limb after an injury or trauma",
+    "keywords": ["chronic pain", "neuropathic pain", "regional pain syndrome", "reflex sympathetic dystrophy"],
+    "category": "Musculoskeletal"
+  },
+  {
+    "code": 8000,
+    "value": "Migraines",
+    "label": "Migraines",
+    "description": "A neurological condition that can cause intense, debilitating headaches often accompanied by other symptoms",
+    "keywords": ["migraine headache", "chronic headache", "neurological disorder", "aura"],
+    "category": "Migraines"
+  },
+  {
+    "code": 8001,
+    "value": "Peripheral Neuropathy",
+    "label": "Peripheral Neuropathy",
+    "description": "A result of damage to the peripheral nerves, often causing weakness, numbness and pain in hands and feet",
+    "keywords": ["nerve damage", "numbness", "tingling", "burning sensation"],
+    "category": "Neurological"
+  },
+  {
+    "code": 8002,
+    "value": "Radiculopathy",
+    "label": "Radiculopathy",
+    "description": "A condition due to a compressed nerve in the spine that can cause pain, numbness, tingling, or weakness along the course of the nerve",
+    "keywords": ["pinched nerve", "nerve root compression", "sciatica", "cervical radiculopathy"],
+    "category": "Neurological"
+  },
+  {
+    "code": 8003,
+    "value": "Restless Leg Syndrome",
+    "label": "Restless Leg Syndrome",
+    "description": "A condition that causes an uncontrollable urge to move your legs, usually due to an uncomfortable sensation",
+    "keywords": ["RLS", "Willis-Ekbom disease", "leg discomfort", "sleep disorder"],
+    "category": "Neurological"
+  },
+  {
+    "code": 8004,
+    "value": "Sciatica",
+    "label": "Sciatica",
+    "description": "Pain that radiates along the path of the sciatic nerve, which branches from your lower back through your hips and buttocks and down each leg",
+    "keywords": ["sciatic nerve pain", "leg pain", "lower back pain", "nerve compression"],
+    "category": "Neurological"
+  },
+  {
+    "code": 8005,
+    "value": "Traumatic Brain Injury (TBI)",
+    "label": "Traumatic Brain Injury (TBI)",
+    "description": "A disruption in the normal function of the brain that can be caused by a bump, blow, or jolt to the head",
+    "keywords": ["brain injury", "concussion", "head trauma", "neurological damage"],
+    "category": "Neurological"
+  },
+  {
+    "code": 9000,
+    "value": "Allergic Rhinitis",
+    "label": "Allergic Rhinitis",
+    "description": "Inflammation of the nasal passages caused by an allergic reaction, often resulting in symptoms similar to a cold",
+    "keywords": ["hay fever", "nasal allergies", "seasonal allergies", "sinus inflammation"],
+    "category": "Respiratory"
+  },
+  {
+    "code": 9001,
+    "value": "Lung Nodules",
+    "label": "Lung Nodules",
+    "description": "Small masses of tissue in the lung that appear as round, white shadows on a chest X-ray or CT scan",
+    "keywords": ["pulmonary nodule", "lung spot", "lung lesion", "pulmonary mass"],
+    "category": "Respiratory"
+  },
+  {
+    "code": 9002,
+    "value": "Mesothelioma",
+    "label": "Mesothelioma",
+    "description": "A type of cancer that develops in the thin layer of tissue that covers many of the internal organs (mesothelium)",
+    "keywords": ["asbestos cancer", "pleural cancer", "lung cancer", "occupational cancer"],
+    "category": "Respiratory"
+  },
+  {
+    "code": 9003,
+    "value": "Sinusitis",
+    "label": "Sinusitis",
+    "description": "Inflammation or swelling of the tissue lining the sinuses, often causing difficulty breathing through the nose",
+    "keywords": ["sinus infection", "rhinosinusitis", "nasal congestion", "facial pain"],
+    "category": "Respiratory"
+  },
+  {
+    "code": 9004,
+    "value": "Sleep Apnea",
+    "label": "Sleep Apnea",
+    "description": "A potentially serious sleep disorder in which breathing repeatedly stops and starts during sleep",
+    "keywords": ["obstructive sleep apnea", "sleep disorder", "snoring", "daytime fatigue"],
+    "category": "Respiratory"
+  },
+  {
+    "code": 9005,
+    "value": "Chronic Obstructive Pulmonary Disease (COPD)",
+    "label": "Chronic Obstructive Pulmonary Disease (COPD)",
+    "description": "A chronic inflammatory lung disease that causes obstructed airflow from the lungs",
+    "keywords": ["emphysema", "chronic bronchitis", "lung disease", "breathing difficulties"],
+    "category": "Respiratory"
+  },
+  {
+    "code": 10000,
+    "value": "Eczema",
+    "label": "Eczema",
+    "description": "A condition that makes your skin red and itchy, often occurring in children but can occur at any age",
+    "keywords": ["atopic dermatitis", "skin rash", "itchy skin", "dermatitis"],
+    "category": "Dermatological"
+  },
+  {
+    "code": 10001,
+    "value": "Scars",
+    "label": "Scars",
+    "description": "Marks left on the skin after a wound or injury has healed",
+    "keywords": ["skin marks", "wound healing", "keloid", "hypertrophic scar"],
+    "category": "Scars"
+  },
+  {
+    "code": 10002,
+    "value": "Squamous Cell Carcinoma",
+    "label": "Squamous Cell Carcinoma",
+    "description": "A common form of skin cancer that develops in the squamous cells that make up the middle and outer layers of the skin",
+    "keywords": ["skin cancer", "SCC", "sun damage", "skin lesion"],
+    "category": "Dermatological"
+  },
+  {
+    "code": 10003,
+    "value": "Tinea Pedis",
+    "label": "Tinea Pedis",
+    "description": "A fungal infection of the foot, commonly known as athlete's foot",
+    "keywords": ["athlete's foot", "foot fungus", "ringworm of the foot", "foot infection"],
+    "category": "Dermatological"
+  },
+  {
+    "code": 10004,
+    "value": "Psoriasis",
+    "label": "Psoriasis",
+    "description": "A condition that causes the body to make new skin cells in days rather than weeks, resulting in thick, scaly patches",
+    "keywords": ["skin disorder", "autoimmune disease", "plaque psoriasis", "skin inflammation"],
+    "category": "Dermatological"
+  },
+  {
+    "code": 11000,
+    "value": "Insomnia",
+    "label": "Insomnia",
+    "description": "A common sleep disorder that can make it hard to fall asleep, hard to stay asleep, or cause you to wake up too early and not be able to get back to sleep",
+    "keywords": ["sleep disorder", "sleeplessness", "sleep difficulties", "chronic insomnia"],
+    "category": "Mental"
+  },
+  {
+    "code": 12000,
+    "value": "Cancer",
+    "label": "Cancer",
+    "description": "A disease in which some of the body's cells grow uncontrollably and spread to other parts of the body",
+    "keywords": ["malignancy", "tumor", "oncology", "neoplasm"],
+    "category": "Oncology"
+  },
+  {
+    "code": 13000,
+    "value": "Erectile Dysfunction",
+    "label": "Erectile Dysfunction",
+    "description": "The inability to get or keep an erection firm enough for sexual intercourse",
+    "keywords": ["ED", "impotence", "sexual dysfunction", "male sexual health"],
+    "category": "Reproductive"
+  }
+
+]
