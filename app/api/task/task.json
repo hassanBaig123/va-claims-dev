@@ -1,0 +1,73 @@
+{
+  "key": "task",
+  "action": "create_run",
+  "task": {
+    "name": "CreateCustomerReport",
+    "node_template_name": "CreateCustomerReport",
+    "session_id": "c144a717-7c75-47fb-8dbb-0bf5f6d8e4cb",
+    "description": "Process this form by creating a report for the customer based on the conditions selected.",
+    "id": "e31e2b83-f370-4ebe-aba8-49d5242a2ea3",
+    "context_info": {
+      "key": "task:e31e2b83-f370-4ebe-aba8-49d5242a2ea3",
+      "context": {
+        "user_context": {
+          "user_id": "ab9ee997-aefe-4877-97b5-5d2caeea2170"
+        },
+        "object_contexts": [
+          {
+            "object_id": "f0d45e59-8ebe-4b85-9715-d8ac5b58df96",
+            "type": "forms"
+          }
+        ]
+      },
+      "input_description": "dasfadsjflkjadslfkjdsf",
+      "output": {
+        "user_id": "5678",
+        "executive_summary": "This is a detailed executive summary of the report.",
+        "condition_sections": [
+          {
+            "condition": "Hypertension",
+            "scoring": {
+              "score": "3",
+              "summary": "The patient has moderate hypertension."
+            },
+            "summary": "The patient has been experiencing high blood pressure for the past 5 years.",
+            "research": [
+              {
+                "url": "http://medicaljournal.com/hypertension-study",
+                "summary": "A comprehensive study on the effects of hypertension.",
+                "published_date": "2022-05-15",
+                "author": "Dr. Jane Smith",
+                "title": "Hypertension and Its Long-term Effects"
+              }
+            ],
+            "nexus_letter": {
+              "letter": "This letter confirms the diagnosis of hypertension.",
+              "research": [
+                {
+                  "url": "http://medicaljournal.com/hypertension-study",
+                  "summary": "A comprehensive study on the effects of hypertension.",
+                  "published_date": "2022-05-15",
+                  "author": "Dr. Jane Smith",
+                  "title": "Hypertension and Its Long-term Effects"
+                }
+              ]
+            },
+            "personal_statement": "I have been dealing with high blood pressure for several years, which has affected my daily life.",
+            "keypoints": [
+              "Documenting daily blood pressure readings",
+              "Providing evidence of lifestyle changes to manage hypertension",
+              "Highlighting the impact of hypertension on daily activities and work",
+              "Gathering statements from family or friends about the condition's effects"
+            ],
+            "c_and_p_tips": [
+              "Keep a record of your symptoms",
+              "Bring all relevant medical documents",
+              "Be honest and detailed about your condition"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

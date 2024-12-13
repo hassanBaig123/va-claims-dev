@@ -1,0 +1,18 @@
+.headerClass {
+    width: 100%;
+    justify-content: space-between;
+}
+
+@media (max-width: 767px) {
+    .headerClass {
+        width: fit-content;
+    }
+    .logoClass {
+        display: none;
+    }
+}
+
+.navClass a {
+    font-size: 16px;
+    /* color: #0a173b; */
+}

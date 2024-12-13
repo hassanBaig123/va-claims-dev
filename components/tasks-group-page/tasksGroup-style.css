@@ -1,0 +1,42 @@
+.wrapper {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0px 40px;
+}
+.headerDiv {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.heading {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 21.78px;
+  color: #09090b;
+}
+
+.returnKeysDiv {
+  flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  max-width: 500px;
+}
+.actionsDiv {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.pagination {
+  margin-top: 16px;
+}
+
+.paginationButton {
+  border: 1px solid #e4e4e7;
+  height: 32px;
+  width: 32px;
+}
