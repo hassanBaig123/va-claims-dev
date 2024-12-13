@@ -1,0 +1,103 @@
+# name: Docker Build, Replace, and Deploy
+
+# on:
+#   push:
+#     branches:
+#       - main
+
+# jobs:
+#   build-replace-and-deploy:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#     - name: Checkout Repository
+#       uses: actions/checkout@v2
+
+#     - name: Set up AWS CLI
+#       uses: aws-actions/configure-aws-credentials@v1
+#       with:
+#         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+#         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+#         aws-region: us-west-2
+
+#     - name: Create .env File for Frontend
+#       run: |
+#         echo "NODE_ENV=development" > docker/frontend/.env
+#         echo "PORT=3000" >> docker/frontend/.env
+#         echo "NEXT_PUBLIC_EXPRESS_SERVER_URL=http://localhost:4000" >> docker/frontend/.env
+#         echo "ALLOWED_ORIGIN=http://localhost:3000" >> docker/frontend/.env
+#         echo "NEXT_PUBLIC_SUPABASE_URL=${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}" >> docker/frontend/.env
+#         echo "NEXT_PUBLIC_SUPABASE_ANON_KEY=${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}" >> docker/frontend/.env
+#         echo "SUPABASE_AUTH_JWT_SECRET=${{ secrets.SUPABASE_AUTH_JWT_SECRET }}" >> docker/frontend/.env
+#         echo "SUPABASE_AUTH_SERVICE_ROLE_KEY=${{ secrets.SUPABASE_AUTH_SERVICE_ROLE_KEY }}" >> docker/frontend/.env
+#         echo "SUPABASE_DB_PASSWORD=${{ secrets.SUPABASE_DB_PASSWORD }}" >> docker/frontend/.env
+#         echo "STRIPE_SECRET_KEY=${{ secrets.STRIPE_SECRET_KEY }}" >> docker/frontend/.env
+#         echo "NEXT_PUBLIC_STRIPE_PUBLIC_KEY=${{ secrets.NEXT_PUBLIC_STRIPE_PUBLIC_KEY }}" >> docker/frontend/.env
+#         echo "REDIS_URL=redis://localhost:6379" >> docker/frontend/.env
+#         echo "KAFKA_BROKER_URL=localhost:29092" >> docker/frontend/.env
+#         echo "ONLINE_TOPIC=ONLINE_SESSIONS" >> docker/frontend/.env
+#         echo "MAINSESSIONS_TOPIC=MAIN_SESSIONS" >> docker/frontend/.env
+#         echo "AGENCY_TASKS_TOPIC=AGENCY_TASKS" >> docker/frontend/.env
+#         echo "AGENCY_TASKS_CALLBACK_TOPIC=AGENCY_TASKS_CALLBACK" >> docker/frontend/.env
+#         echo "AGENCY_TASKS_ERROR_TOPIC=AGENCY_TASKS_ERROR" >> docker/frontend/.env
+#       env:
+#         DOCKER_CLI_AWS: 1
+
+#     - name: Build and Push Docker Image - Frontend
+#       run: |
+#         cd docker/frontend
+#         ls -ahl
+#         cd ../..
+#         COMMIT_ID=$(git rev-parse --short=7 HEAD)
+#         DOCKER_REPO="${{ secrets.ECR_REPO_URI }}-frontend"
+#         DOCKER_TAG=${DOCKER_REPO}:${COMMIT_ID}
+#         echo $DOCKER_REPO
+#         echo $(aws ecr get-login-password) | docker login -u AWS --password-stdin $DOCKER_REPO
+#         for i in {1..5}; do
+#           docker build -f docker/frontend/Dockerfile -t $DOCKER_TAG . && break || sleep 15;
+#         done
+#         docker push $DOCKER_TAG
+#       env:
+#         DOCKER_CLI_AWS: 1
+
+#     - name: Find and Replace Placeholders in docker-compose.yml
+#       run: |
+#         rm -vf docker-compose.yml
+#         cp -v docker-compose-ec2.yml docker-compose.yml
+#         COMMIT_ID=$(git rev-parse --short=7 HEAD)
+#         sed -i "s/TAG_NAME/$COMMIT_ID/g" docker-compose.yml
+#         ls -ahl
+#         rm -rf .git .github backend docker-compose-*.yml ec2.env frontend nginx
+#         cat docker-compose.yml
+#         ls -ahl
+
+#     - name: Debug SSH Key
+#       run: |
+#         echo "${{ secrets.REMOTE_SERVER_SSH_KEY }}" > /tmp/ssh_key
+#         chmod 600 /tmp/ssh_key
+#         cat /tmp/ssh_key
+#         ssh -i /tmp/ssh_key -o StrictHostKeyChecking=no ${{ secrets.REMOTE_SERVER_USERNAME }}@${{ secrets.REMOTE_SERVER_HOST }} "echo 'SSH Key is working'"
+
+#     - name: Copy Files to Remote Server
+#       uses: appleboy/scp-action@v0.1.4
+#       with:
+#         host: ${{ secrets.REMOTE_SERVER_HOST }}
+#         username: ${{ secrets.REMOTE_SERVER_USERNAME }}
+#         key: ${{ secrets.REMOTE_SERVER_SSH_KEY }}
+#         port: 22
+#         source: ./*
+#         target: "/home/ec2-user/vaclaims-app/"
+#         debug: true
+
+#     - name: Remove ToolCache
+#       run: |
+#         rm -rf /opt/hostedtoolcache
+
+#     - name: Start the Deployment
+#       uses: appleboy/ssh-action@master
+#       with:
+#         host: ${{ secrets.REMOTE_SERVER_HOST }}
+#         username: ${{ secrets.REMOTE_SERVER_USERNAME }}
+#         key: ${{ secrets.REMOTE_SERVER_SSH_KEY }}
+#         script: |
+#           bash /home/ec2-user/vaclaims-app/script.sh
